@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:valorant_pocket_guide/presentation/view/home_page.dart';
+import 'package:valorant_pocket_guide/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
