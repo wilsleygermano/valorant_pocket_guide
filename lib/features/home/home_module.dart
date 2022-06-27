@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:valorant_pocket_guide/core/features/home/data/data_source/call_agents_list_data_source.dart';
-import 'package:valorant_pocket_guide/core/features/home/presentation/home_page.dart';
+import 'data/data_source/call_agents_list_data_source.dart';
+import 'presentation/home_page.dart';
 
 class HomeModule extends Module {
   @override

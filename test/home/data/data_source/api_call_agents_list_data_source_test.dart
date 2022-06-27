@@ -4,9 +4,9 @@ import 'package:modular_test/modular_test.dart';
 import 'package:valorant_pocket_guide/app_module.dart';
 import 'package:valorant_pocket_guide/core/adapters/remote_client.dart';
 import 'package:valorant_pocket_guide/core/adapters/remote_client_error.dart';
-import 'package:valorant_pocket_guide/core/features/home/data/data_source/call_agents_list_data_source.dart';
 import 'package:valorant_pocket_guide/core/generics/api_response.dart';
 import 'package:valorant_pocket_guide/core/generics/resource.dart';
+import 'package:valorant_pocket_guide/features/home/data/data_source/call_agents_list_data_source.dart';
 
 void main() {
   // intancio uma classe "fake" para teste (criada ao fim do documento)
