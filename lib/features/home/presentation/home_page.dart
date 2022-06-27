@@ -39,9 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Center(
         child: Observer(builder: (_) {
           return ListView.builder(
-            itemCount: _controller.agentsList.length,
+            itemCount: _controller.agentsData.length,
             itemBuilder: (context, index) {
-              return Text(_controller.agentsList[index].displayName!);
+              return Text(_controller.agentsData[index].displayName!);
             },
           );
         }),

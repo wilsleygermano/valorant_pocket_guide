@@ -11,6 +11,7 @@
 // import 'package:valorant_pocket_guide/features/home/domain/entities/agents_entity.dart';
 // import 'package:valorant_pocket_guide/features/home/domain/use_case/api_call_use_case.dart';
 // import 'package:valorant_pocket_guide/features/home/home_module.dart';
+// import 'package:valorant_pocket_guide/features/home/presentation/controller/home_page_controller.dart';
 
 // void main() {
 //   // intancio uma classe "fake" para teste (criada ao fim do documento)
@@ -24,7 +25,7 @@
 //       initModule(
         
 //         HomeModule(),
-//         replaceBinds: [Bind.instance<DefaultAgentsListCall>(stub)],
+//         replaceBinds: [Bind.instance<HomePageController>(stub)],
         
 //       );
 
@@ -72,14 +73,14 @@
 //   }
 // }
 
-// class RemoteClientStub implements RemoteClient {
-//   // crio uma variável que se retorna o tipo esperado pela função a ser testada.
-//   ApiResponse<Map<String, dynamic>, RemoteClientError>? apiResponseToUse;
+// // class RemoteClientStub implements RemoteClient {
+// //   // crio uma variável que se retorna o tipo esperado pela função a ser testada.
+// //   ApiResponse<Map<String, dynamic>, RemoteClientError>? apiResponseToUse;
 
-//   @override
-//   Future<ApiResponse<Map<String, dynamic>, RemoteClientError>> get(
-//       String url) async {
-//         // aqui passo a variável acima criada.
-//     return apiResponseToUse!;
-//   }
-// }
+// //   @override
+// //   Future<ApiResponse<Map<String, dynamic>, RemoteClientError>> get(
+// //       String url) async {
+// //         // aqui passo a variável acima criada.
+// //     return apiResponseToUse!;
+// //   }
+// // }

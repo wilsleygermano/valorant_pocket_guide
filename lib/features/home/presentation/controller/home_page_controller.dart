@@ -14,15 +14,13 @@ class HomePageController = _HomePageControllerBase with _$HomePageController;
 abstract class _HomePageControllerBase with Store {
   final _useCase = Modular.get<ApiCallUseCase>();
 
+  
   @observable
-  String agentName = "";
+  List<AgentData> agentsData = [];
 
-  @observable
-  ObservableList<AgentData> agentsList = ObservableList<AgentData>.of([]);
-
+  
   @action
-  Future<ObservableList<AgentData>> fetchAgentsList() async {
-
+  Future<List<AgentData>> fetchAgentsList() async {
     final resource = await _useCase.returnAgentsListValues();
 
     if (resource.hasError) {
@@ -33,13 +31,13 @@ abstract class _HomePageControllerBase with Store {
 
     if (resource.status == Status.loading) {
       const Center(
-          child: CupertinoActivityIndicator(
-        color: AppColors.mainRedishDarkerColor,
-      ));
+        child: CupertinoActivityIndicator(
+          color: AppColors.mainRedishDarkerColor,
+        ),
+      );
     }
-    final agentsData = resource.data!;
+    agentsData = resource.data!.data!;
 
-    return agentsList;
-
+    return agentsData;
   }
 }
