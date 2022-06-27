@@ -1,8 +1,9 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:valorant_pocket_guide/core/adapters/remote_client.dart';
 import 'package:valorant_pocket_guide/core/constants/api_routes.dart';
-import 'package:valorant_pocket_guide/core/features/home/data/api_call_error.dart';
 import 'package:valorant_pocket_guide/core/generics/resource.dart';
+
+import '../api_call_error.dart';
 
 abstract class CallAgentsListDataSource {
   Future<Resource<Map<String, dynamic>, ApiCallError>> returnAgentsList();
