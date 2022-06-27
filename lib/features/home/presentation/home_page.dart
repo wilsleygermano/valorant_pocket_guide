@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:valorant_pocket_guide/core/design/app_colors.dart';
+import 'package:valorant_pocket_guide/features/home/presentation/controller/home_page_controller.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -11,6 +15,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final _controller = Modular.get<HomePageController>();
+
+  @override
+  void initState() {
+    _controller.fetchAgentsList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -24,7 +36,16 @@ class _MyHomePageState extends State<MyHomePage> {
           color: AppColors.jetBlack,
         ),
       ),
-      child: Container(),
+      child: Center(
+        child: Observer(builder: (_) {
+          return ListView.builder(
+            itemCount: _controller.agentsList.length,
+            itemBuilder: (context, index) {
+              return Text(_controller.agentsList[index].displayName!);
+            },
+          );
+        }),
+      ),
     );
   }
 }

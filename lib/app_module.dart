@@ -8,7 +8,9 @@ class AppModule extends Module {
 
   @override
   List<Bind> get binds => [
-    Bind<RemoteClient>((i) => DioRemoteClient(), isSingleton: false,)
+    Bind<RemoteClient>((i) => DioRemoteClient(),)
+
+    
   ];
 
   @override
