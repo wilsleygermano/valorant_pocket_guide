@@ -1,5 +1,6 @@
 // import 'package:flutter_modular/flutter_modular.dart';
 // import 'package:flutter_test/flutter_test.dart';
+// import 'package:mobx/src/core.dart';
 // import 'package:modular_test/modular_test.dart';
 // import 'package:valorant_pocket_guide/app_module.dart';
 // import 'package:valorant_pocket_guide/core/adapters/remote_client.dart';
@@ -17,7 +18,7 @@
 //   // intancio uma classe "fake" para teste (criada ao fim do documento)
 //   final stub = DefaultAgentsListCallStub();
 //   final stub2 = RemoteClientStub();
-
+// final controller = Modular.get<HomePageController>();
 //   group(
 //     "Api Call Agents List Test",
 //     () {
@@ -25,7 +26,7 @@
 //       initModule(
         
 //         HomeModule(),
-//         replaceBinds: [Bind.instance<HomePageController>(stub)],
+//         replaceBinds: [Bind.instance<HomePageController>()],
         
 //       );
 
@@ -40,8 +41,7 @@
 //       test(
 //         "When statusCode != 200 then should return an error",
 //         () async {
-//         stub.apiResponseToUse = Resource.failed();
-//           final result = await testingUnit.returnAgentsListValues();
+//           final result = await controller.fetchAgentsList();
 //           expect(result.error, isNot(null));
 //           expect(result.data, isNull);
 //           expect(result.status, Status.failed);
@@ -51,7 +51,7 @@
 //         "When statusCode == 200 then should return my data",
 //         () async {
 //         stub.apiResponseToUse = Resource.success();
-//           final result = await testingUnit.returnAgentsListValues();
+//           final result = await controller.fetchAgentsList();
 //           expect(result.data, isNot(null));
 //           expect(result.error, isNull);
 //           expect(result.status, Status.success);
@@ -73,14 +73,16 @@
 //   }
 // }
 
-// // class RemoteClientStub implements RemoteClient {
-// //   // crio uma variável que se retorna o tipo esperado pela função a ser testada.
-// //   ApiResponse<Map<String, dynamic>, RemoteClientError>? apiResponseToUse;
+// class RemoteClientStub implements RemoteClient {
+//   // crio uma variável que se retorna o tipo esperado pela função a ser testada.
+//   ApiResponse<Map<String, dynamic>, RemoteClientError>? apiResponseToUse;
 
-// //   @override
-// //   Future<ApiResponse<Map<String, dynamic>, RemoteClientError>> get(
-// //       String url) async {
-// //         // aqui passo a variável acima criada.
-// //     return apiResponseToUse!;
-// //   }
-// // }
+//   @override
+//   Future<ApiResponse<Map<String, dynamic>, RemoteClientError>> get(
+//       String url) async {
+//         // aqui passo a variável acima criada.
+//     return apiResponseToUse!;
+//   }
+// }
+
+

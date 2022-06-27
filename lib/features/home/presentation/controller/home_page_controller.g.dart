@@ -29,7 +29,7 @@ mixin _$HomePageController on _HomePageControllerBase, Store {
       AsyncAction('_HomePageControllerBase.fetchAgentsList', context: context);
 
   @override
-  Future<List<AgentData>> fetchAgentsList() {
+  Future<Resource<List<AgentData>, ApiCallError>> fetchAgentsList() {
     return _$fetchAgentsListAsyncAction.run(() => super.fetchAgentsList());
   }
 

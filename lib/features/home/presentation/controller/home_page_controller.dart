@@ -20,7 +20,7 @@ abstract class _HomePageControllerBase with Store {
 
   
   @action
-  Future<List<AgentData>> fetchAgentsList() async {
+  Future<Resource<List<AgentData>, ApiCallError>> fetchAgentsList() async {
     final resource = await _useCase.returnAgentsListValues();
 
     if (resource.hasError) {
@@ -38,6 +38,6 @@ abstract class _HomePageControllerBase with Store {
     }
     agentsData = resource.data!.data!;
 
-    return agentsData;
+    return Resource.success(data: agentsData);
   }
 }

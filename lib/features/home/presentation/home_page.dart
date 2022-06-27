@@ -39,9 +39,19 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Center(
         child: Observer(builder: (_) {
           return ListView.builder(
+            shrinkWrap: true,
             itemCount: _controller.agentsData.length,
             itemBuilder: (context, index) {
-              return Text(_controller.agentsData[index].displayName!);
+              return Card(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Image(image: NetworkImage(_controller.agentsData[index].displayIconSmall!), height: 100, width: 100,),
+                    Text(_controller.agentsData[index].displayName!)
+                  ],
+                ),
+              );
             },
           );
         }),
