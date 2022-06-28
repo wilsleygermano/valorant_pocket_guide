@@ -38,7 +38,13 @@ ThemeData theme() {
       headline6: TextStyle(
         color: AppColors.white,
         fontWeight: FontWeight.normal,
-        fontSize: 14,
+        fontSize: 4,
+        fontFamily: GoogleFonts.lato().fontFamily,
+      ),
+      headlineSmall: TextStyle(
+        color: AppColors.white,
+        fontWeight: FontWeight.normal,
+        fontSize: 12,
         fontFamily: GoogleFonts.lato().fontFamily,
       ),
     ),
