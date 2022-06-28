@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:valorant_pocket_guide/core/design/app_colors.dart';
 import 'package:valorant_pocket_guide/features/home/presentation/controller/home_page_controller.dart';
+import 'package:valorant_pocket_guide/features/home/widgets/agent_card.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -38,19 +38,15 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       child: Center(
         child: Observer(builder: (_) {
-          return ListView.builder(
-            shrinkWrap: true,
+          return GridView.builder(
             itemCount: _controller.agentsData.length,
+            gridDelegate:
+                const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
             itemBuilder: (context, index) {
-              return Card(
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image(image: NetworkImage(_controller.agentsData[index].displayIconSmall!), height: 100, width: 100,),
-                    Text(_controller.agentsData[index].displayName!)
-                  ],
-                ),
+              return AgentCard(
+                agentAvatarUrl: _controller.agentsData[index].displayIconSmall!,
+                agentName: _controller.agentsData[index].displayName!,
+                onTapAction: () {},
               );
             },
           );
