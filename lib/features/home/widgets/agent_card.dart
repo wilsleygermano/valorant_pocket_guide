@@ -7,7 +7,7 @@ import '../../../core/widgets/glassmorphism.dart';
 class AgentCard extends StatelessWidget {
   final String agentAvatarUrl;
   final String agentName;
-  final Function onTapAction;
+  final void Function() onTapAction;
 
   const AgentCard(
       {Key? key,
@@ -25,9 +25,7 @@ class AgentCard extends StatelessWidget {
         start: 0.4,
         end: 0.1,
         child: GestureDetector(
-          onTap: () {
-            onTapAction;
-          },
+          onTap: () => onTapAction,
           child: Card(
             elevation: 0,
             color: AppColors.transparent,
