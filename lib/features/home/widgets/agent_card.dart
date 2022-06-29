@@ -25,7 +25,7 @@ class AgentCard extends StatelessWidget {
         start: 0.4,
         end: 0.1,
         child: GestureDetector(
-          onTap: () => onTapAction,
+          onTap: onTapAction,
           child: Card(
             elevation: 0,
             color: AppColors.transparent,
